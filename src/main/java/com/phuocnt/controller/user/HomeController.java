@@ -14,10 +14,8 @@ import java.io.IOException;
 public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = new User("cuadong01012001", "Nguyễn Thanh Phước");
-        req.setAttribute("user", user);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/views/user/home.jsp");
-        requestDispatcher.forward(req, resp);
+
+        req.getRequestDispatcher("/views/user/home.jsp").forward(req, resp);
     }
 
     @Override
