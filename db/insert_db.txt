@@ -1,0 +1,9 @@
+INSERT INTO table_category(code, name) VALUE('the-thao', 'Thể Thao');
+INSERT INTO table_category(code, name) VALUE('the-gioi', 'Thế Giới');
+INSERT INTO table_category(code, name) VALUE('chinh-tri', 'Chính Trị');
+INSERT INTO table_category(code, name) VALUE('thoi-su', 'Thời Sự');
+INSERT INTO table_category(code, name) VALUE('goc-nhin', 'Góc Nhìn');
+
+INSERT INTO table_news(title, category_id) VALUE ('Bài viết 1', 1);
+INSERT INTO table_news(title, category_id) VALUE ('Bài viết 2', 1);
+INSERT INTO table_news(title, category_id) VALUE ('Bài viết 3', 2);

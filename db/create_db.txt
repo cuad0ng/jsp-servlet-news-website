@@ -1,0 +1,66 @@
+DROP TABLE IF EXISTS table_user;
+CREATE TABLE table_user(
+	id BIGINT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    fullname VARCHAR(255) NULL,
+    status BOOLEAN NOT NULL,
+    role_id BIGINT NOT NULL,
+    create_date TIMESTAMP NULL,
+    modify_date TIMESTAMP NULL,
+    create_by VARCHAR(255) NULL,
+    modify_by VARCHAR(255) NULL,
+    PRIMARY KEY (id)
+);
+DROP TABLE IF EXISTS table_role;
+CREATE TABLE table_role(
+	id BIGINT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    code VARCHAR(255) NOT NULL,
+    create_date TIMESTAMP NULL,
+    modify_date TIMESTAMP NULL,
+    create_by VARCHAR(255) NULL,
+    modify_by VARCHAR(255) NULL,
+    PRIMARY KEY (id)
+);
+ALTER TABLE table_user ADD CONSTRAINT fk_user_role FOREIGN KEY (role_id) REFERENCES table_role(id);
+DROP TABLE IF EXISTS table_news;
+CREATE TABLE table_news(
+	id BIGINT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NULL,
+    thumbnail VARCHAR(150) NULL,
+    short_description TEXT NULL,
+    content TEXT NULL,
+    category_id BIGINT NOT NULL,
+    create_date TIMESTAMP NULL,
+    modify_date TIMESTAMP NULL,
+    create_by VARCHAR(255) NULL,
+    modify_by VARCHAR(255) NULL,
+    PRIMARY KEY (id)
+);
+DROP TABLE IF EXISTS table_category;
+CREATE TABLE table_category(
+	id BIGINT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    code VARCHAR(255) NOT NULL,
+    create_date TIMESTAMP NULL,
+    modify_date TIMESTAMP NULL,
+    create_by VARCHAR(255) NULL,
+    modify_by VARCHAR(255) NULL,
+    PRIMARY KEY (id)
+);
+ALTER TABLE table_news ADD CONSTRAINT fk_news_category FOREIGN KEY (category_id) REFERENCES table_category(id);
+DROP TABLE IF EXISTS table_comment;
+CREATE TABLE table_comment(
+	id BIGINT NOT NULL AUTO_INCREMENT,
+    content TEXT NOT NULL,
+    user_id BIGINT NOT NULL,
+    news_id BIGINT NOT NULL,
+    create_date TIMESTAMP NULL,
+    modify_date TIMESTAMP NULL,
+    create_by VARCHAR(255) NULL,
+    modify_by VARCHAR(255) NULL,
+    PRIMARY KEY (id)
+);
+ALTER TABLE table_comment ADD CONSTRAINT fk_comment_user FOREIGN KEY (user_id) REFERENCES table_user(id);
+ALTER TABLE table_comment ADD CONSTRAINT fk_comment_news FOREIGN KEY (news_id) REFERENCES table_news(id);

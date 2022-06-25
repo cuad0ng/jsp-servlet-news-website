@@ -1,8 +1,10 @@
 package com.phuocnt.controller.user;
 
-import com.phuocnt.model.User;
 
-import javax.servlet.RequestDispatcher;
+import com.phuocnt.service.ICategoryService;
+import com.phuocnt.service.INewsService;
+
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,9 +14,16 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = {"/home"})
 public class HomeController extends HttpServlet {
+    @Inject
+    private ICategoryService categoryService;
+    @Inject
+    private INewsService newsService;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        long categoryId = 1;
+        req.setAttribute("news", newsService.findByCategoryId(categoryId));
+        req.setAttribute("categories", categoryService.findAll());
         req.getRequestDispatcher("/views/user/home.jsp").forward(req, resp);
     }
 
