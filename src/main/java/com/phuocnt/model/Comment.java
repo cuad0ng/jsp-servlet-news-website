@@ -4,13 +4,13 @@ import java.sql.Timestamp;
 
 public class Comment extends AbstractModel {
     private String content;
-    private long userId;
-    private long newsId;
+    private Long userId;
+    private Long newsId;
 
     public Comment() {
     }
 
-    public Comment(String content, long userId, long newsId, long id, Timestamp createDate, Timestamp modifyDate, String createBy, String modifyBy) {
+    public Comment(String content, Long userId, Long newsId, Long id, Timestamp createDate, Timestamp modifyDate, String createBy, String modifyBy) {
         this.content = content;
         this.userId = userId;
         this.newsId = newsId;
@@ -33,7 +33,7 @@ public class Comment extends AbstractModel {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -41,7 +41,7 @@ public class Comment extends AbstractModel {
         return newsId;
     }
 
-    public void setNewsId(long newsId) {
+    public void setNewsId(Long newsId) {
         this.newsId = newsId;
     }
 }

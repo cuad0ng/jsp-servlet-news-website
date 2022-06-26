@@ -10,7 +10,7 @@ public class Category extends AbstractModel {
     public Category() {
     }
 
-    public Category(String name, String code, long id, Timestamp createDate, Timestamp modifyDate, String createBy, String modifyBy) {
+    public Category(String name, String code, Long id, Timestamp createDate, Timestamp modifyDate, String createBy, String modifyBy) {
         this.name = name;
         this.code = code;
         this.setId(id);

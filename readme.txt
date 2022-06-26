@@ -50,3 +50,5 @@ Nhưng với cách @Inject:
 @Inject
 private ICategoryDAO categoryDAO;
 "
+--> Request thứ nhất vào trang chủ tạo 1 NewsService bỏ vào beans, request thứ hai vào trang chủ,
+Servlet Weld sẽ vào beans (container) đã tồn tại chưa, có thì lấy ra không thì tạo mới

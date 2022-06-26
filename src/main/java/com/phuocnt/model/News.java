@@ -7,12 +7,12 @@ public class News extends AbstractModel {
     private String thumbnail;
     private String shortDescription;
     private String content;
-    private long categoryId;
+    private Long categoryId;
 
     public News() {
     }
 
-    public News(String title, String thumbnail, String shortDescription, String content, long categoryId, long id, Timestamp createDate, Timestamp modifyDate, String createBy, String modifyBy) {
+    public News(String title, String thumbnail, String shortDescription, String content, Long categoryId, Long id, Timestamp createDate, Timestamp modifyDate, String createBy, String modifyBy) {
         this.title = title;
         this.thumbnail = thumbnail;
         this.shortDescription = shortDescription;
@@ -57,11 +57,11 @@ public class News extends AbstractModel {
         this.content = content;
     }
 
-    public long getCategoryId() {
+    public Long getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(long categoryId) {
+    public void setCategoryId(Long categoryId) {
         this.categoryId = categoryId;
     }
 }

@@ -1,6 +1,7 @@
 package com.phuocnt.controller.user;
 
 
+import com.phuocnt.model.News;
 import com.phuocnt.service.ICategoryService;
 import com.phuocnt.service.INewsService;
 
@@ -21,8 +22,7 @@ public class HomeController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        long categoryId = 1;
-        req.setAttribute("news", newsService.findByCategoryId(categoryId));
+
         req.setAttribute("categories", categoryService.findAll());
         req.getRequestDispatcher("/views/user/home.jsp").forward(req, resp);
     }

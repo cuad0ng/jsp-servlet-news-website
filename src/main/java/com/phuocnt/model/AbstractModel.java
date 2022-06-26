@@ -2,18 +2,18 @@ package com.phuocnt.model;
 
 import java.sql.Timestamp;
 
-public abstract class AbstractModel {
-    private long id;
+public class AbstractModel {
+    private Long id;
     private Timestamp createDate;
     private Timestamp modifyDate;
     private String createBy;
     private String modifyBy;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

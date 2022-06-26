@@ -9,7 +9,7 @@ public class Role extends AbstractModel {
     public Role() {
     }
 
-    public Role(String name, String code, long id, Timestamp createDate, Timestamp modifyDate, String createBy, String modifyBy) {
+    public Role(String name, String code, Long id, Timestamp createDate, Timestamp modifyDate, String createBy, String modifyBy) {
         this.name = name;
         this.code = code;
         this.setId(id);

@@ -7,12 +7,12 @@ public class User extends AbstractModel{
     private String passWord;
     private String fullName;
     private boolean status;
-    private long roleId;
+    private Long roleId;
 
     public User() {
     }
 
-    public User(long id, String userName, String passWord, String fullName, boolean status, long roleId, Timestamp createDate, Timestamp modifyDate, String createBy, String modifyBy) {
+    public User(Long id, String userName, String passWord, String fullName, boolean status, Long roleId, Timestamp createDate, Timestamp modifyDate, String createBy, String modifyBy) {
         this.userName = userName;
         this.passWord = passWord;
         this.fullName = fullName;
@@ -57,11 +57,11 @@ public class User extends AbstractModel{
         this.status = status;
     }
 
-    public long getRoleId() {
+    public Long getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(long roleId) {
+    public void setRoleId(Long roleId) {
         this.roleId = roleId;
     }
 }

@@ -5,5 +5,6 @@ import com.phuocnt.model.News;
 import java.util.List;
 
 public interface INewsService {
-List<News> findByCategoryId(long categoryId);
+    List<News> findByCategoryId(long categoryId);
+    News save(News news);
 }
